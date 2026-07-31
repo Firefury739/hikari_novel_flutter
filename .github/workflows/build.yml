@@ -1,9 +1,7 @@
 name: Build Release APK
 on:
     push:
-         branches: 
-          - "main"
-          - "master"
+         branches: main
  jobs:
     build:
         runs-on:ubuntu-latest
