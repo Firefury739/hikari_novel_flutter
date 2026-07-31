@@ -25,10 +25,11 @@ class LoginController extends GetxController {
   InAppWebViewController? inAppWebViewController;
   final GlobalKey webViewKey = GlobalKey();
   final InAppWebViewSettings settings = InAppWebViewSettings(
-    isInspectable: kDebugMode,
-    userAgent: Request.userAgent[HttpHeaders.userAgentHeader],
-    javaScriptEnabled: true,
-  );
+  isInspectable: kDebugMode,
+  userAgent: "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36",
+  javaScriptEnabled: true,
+);
+
   RxString currentUrl = "".obs;
 
   Rx<PageState> pageState = PageState.success.obs;
@@ -39,7 +40,7 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    cookieManager.deleteAllCookies();
+   // cookieManager.deleteAllCookies();
   }
 
   Future<void> saveCookie(WebUri uri) async {
